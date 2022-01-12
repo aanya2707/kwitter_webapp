@@ -34,10 +34,10 @@ function getData() { firebase.database().ref("/"+room_name).on('value', function
       name = message_data['name'];
       message = message_data['message'];
       like = message_data['like'];
-      name_tag = "<h4>" +name+ "<img class='user_tick' src='tick.png'> </h4>";
-      message_tag = "<h4 class='message_h4'>"+message+"</h4>";
-      button_tag = "<button class='btn btn-warning' id="+firebase_message_id+" value ="+ like +" onclick='updateLike(this.id)'>";
-      span_tag = "<span class='glyphicon glyphicon-thumbs-up'> like: "+like+"</span></button><hr>";
+      name_tag = "<h4>" + name + "<img class='user_tick' src='tick.png'> </h4>";
+      message_tag = "<h4 class='message_h4'>"+ message +"</h4>";
+      button_tag = "<button class='btn btn-warning' id="+ firebase_message_id +" value ="+ like +" onclick='updateLike(this.id)'>";
+      span_tag = "<span class='glyphicon glyphicon-thumbs-up'> like: "+ like +"</span></button><hr>";
 
       row = name_tag + message_tag + button_tag + span_tag ;
       document.getElementById("output").innerHTML += row ;
@@ -57,7 +57,7 @@ function updateLike(message_id){
       });
 }
 
-function logout(){
+function logOut(){
       localStorage.removeItem("user_name");
       localStorage.removeItem("room_name");
       window.location = "index.html";
