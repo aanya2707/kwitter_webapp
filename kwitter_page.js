@@ -7,7 +7,6 @@ const firebaseConfig = {
       messagingSenderId: "5605442125",
       appId: "1:5605442125:web:5092c9320d12528a8a9204"
     };
-    
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
 
@@ -24,7 +23,6 @@ function Send(){
 
       document.getElementById("msg").value="";
 }
-
 function getData() { firebase.database().ref("/"+room_name).on('value', function(snapshot) { document.getElementById("output").innerHTML = ""; snapshot.forEach(function(childSnapshot) { childKey  = childSnapshot.key; childData = childSnapshot.val(); if(childKey != "purpose") {
          firebase_message_id = childKey;
          message_data = childData;
